@@ -1,24 +1,34 @@
-# my-demo-app-android
 
-*My Demo App* is a... demo app! 
-It was built by the Sauce Labs team to showcase product capabilities of the Sauce Labs mobile devices cloud, The Sauce Labs mobile beta testing platform, TestFairy, and more products and technologies that will be added to this project soon.
+### Build the `.apk`
 
-This app is part of a set of demo apps.
+1. **Debug** version:
+   ```bash
+   ./gradlew assembleDebug
+   ```
 
-[My Demo App - Android](https://github.com/saucelabs/my-demo-app-android)
+   The `.apk` will be located at:
+   ```
+   app/build/outputs/apk/debug/app-debug.apk
+   ```
 
-[My Demo App - iOS](https://github.com/saucelabs/my-demo-app-ios)
+2. **Release** version:
+   ```bash
+   ./gradlew assembleRelease
+   ```
 
-### QR code scanner
+   The `.apk` will be located at:
+   ```
+   app/build/outputs/apk/release/app-release.apk
+   ```
 
-This app has a QR code scanner.
-You can find it in the menu under the option "QR CODE SCANNER".
-This page opens the camera (you first need to allow the app to use the camera) which can be used to scan a QR Code.
-If the QR code holds an URL it will automatically open it in a browser. The [following image](./docs/assets/qr-code.png)
-can be used to demo this option.
+   > **Note**: For Release builds, ensure signing is configured in `build.gradle`.
 
-![QR Code](./docs/assets/qr-code.png)
 
-## Publish
 
-To publish a new version, create a release with a valid semver tag name. A CI workflow will handle setting the app version name/code and upload the APK into the release. 
+## Notes
+
+- Use **Debug** for testing and **Release** for distribution.
+- For **Release**, configure signing in `build.gradle` or use **Android Studio**:
+  - Go to **Build > Generate Signed Bundle / APK**.
+
+---
